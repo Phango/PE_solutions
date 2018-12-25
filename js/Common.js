@@ -22,10 +22,20 @@ function isPrime(number) {
 function getPrimeNumbersUpToValue(value) {
   return getRange(1, value).filter(isPrime);
 }
+function getPrimeNumbersUpToCount(count) {
+  var primes = [];
+  for (var i=2; primes.length<count; i++) {
+    if(isPrime(i)) {
+      primes.push(i);
+    }
+  }
+  return primes;
+}
 
 module.exports = {
   multiply: multiply,
   getRange: getRange,
   isPrime: isPrime,
   getPrimeNumbersUpToValue: getPrimeNumbersUpToValue,
+  getPrimeNumbersUpToCount: getPrimeNumbersUpToCount,
 };
