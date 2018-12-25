@@ -4,9 +4,7 @@ function answer(upperLimit) {
   var range = common.getRange(1, upperLimit);
   // console.log(range)
 
-  var sumOfSquares = range.map(function(value) {
-    return value ** 2;
-  }).reduce(function(prev, curr) {
+  var sumOfSquares = range.map(square).reduce(function(prev, curr) {
     return prev + curr;
   });
 
