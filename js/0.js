@@ -4,4 +4,4 @@ function answer() {
 
 }
 
-answer();
+console.log(answer());
