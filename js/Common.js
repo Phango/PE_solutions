@@ -8,7 +8,7 @@ function getRange(a, b) {
   return Array.from({length: b}, (v, k) => (k+1) * a);
 }
 function isPrime(number) {
-  if (number <= 0) {
+  if (number <= 1) {
     return false;
   }
 
