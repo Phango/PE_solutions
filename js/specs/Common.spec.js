@@ -1,4 +1,5 @@
 var common = require('./../src/Common');
+// import * from './../src/Common';
 
 test('multiply', () => {
   expect(common.multiply(1, 2)).toEqual(2);
@@ -27,3 +28,13 @@ test('getPrimeNumbersUpToCount', () => {
   expect(common.getPrimeNumbersUpToCount(5)).toEqual([2,3,5,7,11]);
   expect(common.getPrimeNumbersUpToCount(10)).toEqual([2,3,5,7,11,13,17,19,23,29]);
 });
+
+test('getTriangleNumber', () => {
+  expect(common.getTriangleNumber(2)).toEqual(3);
+  expect(common.getTriangleNumber(5)).toEqual(15);
+  expect(common.getTriangleNumber(7)).toEqual(28);
+});
+
+test('getFactors', () => {
+  expect(common.getFactors(10)).toEqual([1,3]);
+})
