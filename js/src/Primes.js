@@ -3,5 +3,35 @@ var PRIMES = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61
 module.exports = {
   get: () => {
     return PRIMES;
+  },
+  isPrime: (number) => {
+    if (number <= 1) {
+      return false;
+    }
+    for (var i=2; i <= Math.sqrt(number); i++) {
+      if (number % i === 0) {
+        return false;
+      }
+    }
+    return true;
+  },
+  getPrimeNumbersUpToCount: count => {
+    return PRIMES.slice(0, count);
+  },
+  getPrimeNumbersUpToValue: value => {
+    return PRIMES.filter(prime => {
+      return prime < value;
+    });
+  },
+  getPrimeFactors: number => {
+    var primes = getPrimeNumbersUpToValue(Math.floor(number/2));
+    var primeFactors = [];
+  
+    for(var i=1; i<primes.length; i++) {
+      if (number % primes[i] === 0) {
+        primeFactors.push(primes[i]);
+      }
+    }
+    return primeFactors; 
   }
-}
+};
