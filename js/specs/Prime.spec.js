@@ -1,4 +1,4 @@
-var primes = require("./../src/Primes");
+var primes = require("../src/Prime");
 
 test('isPrime', () => {
   expect(primes.isPrime(1)).toBeFalsy();
@@ -17,4 +17,7 @@ test('getPrimeNumbersUpToCount', () => {
   expect(primes.getPrimeNumbersUpToCount(10)).toEqual([2,3,5,7,11,13,17,19,23,29]);
 });
 
-
+test('getPrimeFactors', () => {
+  expect(primes.getPrimeFactors(10)).toEqual([2,5]);
+  expect(primes.getPrimeFactors(28)).toEqual([2,7]);
+})

@@ -1,5 +1,5 @@
 var common = require("./Common");
-var primes = require("./Primes");
+var primes = require("./Prime");
 
 function answer() {
 
