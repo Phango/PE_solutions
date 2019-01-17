@@ -28,17 +28,22 @@ function getTriangleNumber(place) {
 }
 
 function getFactors(target) {
-  var primeFactors = prime.getPrimeFactors(target);
-  var factors = [].concat(primeFactors);
-  
-  for (var i=0; i<primeFactors.length; i++) {
-    const value = target/primeFactors[i];
-    if (factors.indexOf(value ) === -1) {
-      factors.push(target/primeFactors[i]);
+  var factors = [];
+  var i = 1;
+
+  while (i <= Math.sqrt(target)) {
+    if( target % i === 0) {
+      if (target / i === i) {
+        factors.push(i)
+      } else {
+        factors.push(i)
+        factors.push(target / i)
+      }
     }
+    i++;
   }
-  
-  return factors.concat([1,target]).sort(minus);
+
+  return factors.sort(minus);
 }
 
 module.exports = {
