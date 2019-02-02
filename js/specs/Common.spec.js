@@ -19,10 +19,20 @@ test('getRange', () => {
 test('getTriangleNumber', () => {
   expect(common.getTriangleNumber(5)).toEqual(15);
   expect(common.getTriangleNumber(10)).toEqual(55);
-})
-
+});
 
 test('getFactors', () => {
   expect(common.getFactors(10)).toEqual([1,2,5,10]);
   expect(common.getFactors(28)).toEqual([1,2,4,7,14,28]);
 });
+
+test('getFactorial', () => {
+  expect(common.getFactorial(3)).toEqual(6);
+  expect(common.getFactorial(6)).toEqual(720);
+});
+
+test('memoized getFactorial', () => {
+  var memoizedFactorial = common.memoize(common.getFactorial);
+  expect(memoizedFactorial(3)).toEqual(6);
+  expect(memoizedFactorial(6)).toEqual(720);
+})

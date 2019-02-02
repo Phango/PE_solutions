@@ -46,9 +46,27 @@ function getFactors(target) {
   return factors.sort(minus);
 }
 
+function getFactorial(number) {
+  return number > 1 ? number * getFactorial(number - 1) : 1;
+}
+
+function memoize(recursiveFn, max) {
+  max = max || 1000;
+  return (function() {
+    var cache = {};
+    var remaining = max;
+    function fn(n) {
+      return (cache[n] || (remaining-- > 0 ? (cache[n] = recursiveFn(n)) : recursiveFn(n)));
+    } 
+    return fn;
+  }());
+}
+
 module.exports = {
   multiply: multiply,
   getRange: getRange,
   getTriangleNumber: getTriangleNumber,
-  getFactors: getFactors 
+  getFactors: getFactors,
+  getFactorial: getFactorial,
+  memoize: memoize
 }; 
